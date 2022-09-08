@@ -22,18 +22,54 @@ const Tab = createBottomTabNavigator();
 
 const HomeStackNavigator= () =>{
  return(
-       <Stack.Navigator>
-            <Stack.Screen name="Tab" component={TabNavgator}></Stack.Screen>
-            <Stack.Screen name="New Tweet" component={NewTweet}></Stack.Screen>
-            <Stack.Screen name="Tweet Screen" component={TweetScreen}></Stack.Screen>
-            <Stack.Screen name="Profile Screen" component={ProfileScreen}></Stack.Screen>
+       <Stack.Navigator
+        options={{
+                headerShown : true,
+                headerBackTitleVisible: false
+                }}     
+       >
+            <Stack.Screen 
+                name="Tab" 
+                component={TabNavgator}
+                options={{
+                headerShown : false,
+                }}     
+            ></Stack.Screen>
+            <Stack.Screen 
+                name="New Tweet" 
+                component={NewTweet}
+                options={{
+                title : '',
+                headerBackTitleVisible: false
+                }}  
+            ></Stack.Screen>
+            <Stack.Screen 
+                name="Tweet Screen" 
+                component={TweetScreen}
+                options={{
+                title : '',
+                headerBackTitleVisible: false
+                }}  
+            ></Stack.Screen>
+            <Stack.Screen 
+                name="Profile Screen" 
+                component={ProfileScreen}
+                options={{
+                title : '',
+                headerBackTitleVisible: false
+                }}  
+            ></Stack.Screen>
         </Stack.Navigator>
  )
 }
 
 const TabNavgator= () =>{
  return(
-       <Tab.Navigator>
+       <Tab.Navigator 
+            screenOptions={{
+                tabBarShowLabel: false,
+                headerShown : false,
+                }}>
             <Tab.Screen 
                 name="Home1" 
                 component={HomeScreen} 
@@ -72,7 +108,13 @@ export default function App() {
  return (
     <NavigationContainer>
      <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeStackNavigator} />
+      <Drawer.Screen 
+        name="Home" 
+        component={HomeStackNavigator} 
+        options={{
+        headerShown : true,
+        }}
+        />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>
    </NavigationContainer>
