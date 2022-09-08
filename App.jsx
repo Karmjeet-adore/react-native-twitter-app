@@ -13,6 +13,7 @@ import TweetScreen from './Screens/TweetScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import SearchScreen from './Screens/SearchScreen';
 import NotificationsScreen from './Screens/NotificationsScreen';
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -33,9 +34,35 @@ const HomeStackNavigator= () =>{
 const TabNavgator= () =>{
  return(
        <Tab.Navigator>
-            <Tab.Screen name="Home1" component={HomeScreen} />
-            <Tab.Screen name="Search" component={SearchScreen} />
-            <Tab.Screen name="Notifications" component={NotificationsScreen} />
+            <Tab.Screen 
+                name="Home1" 
+                component={HomeScreen} 
+                options={{
+                tabBarLabel:'Home1',
+                tabBarIcon:({color,size})=>(
+                    <Ionicons name="home" size={size} color={color} />
+                )
+            }}/>
+            <Tab.Screen 
+                name="Search" 
+                component={SearchScreen} 
+                options={{
+                tabBarLabel:'Search',
+                tabBarIcon:({color,size})=>(
+                    <Ionicons name="search" size={size} color={color} />
+                )
+            }}
+                />
+            <Tab.Screen 
+                name="Notifications" 
+                component={NotificationsScreen} 
+                options={{
+                tabBarLabel:'Notifications',
+                tabBarIcon:({color,size})=>(
+                    <Ionicons name="notifications" size={size} color={color} />
+                )
+            }}
+                />
         </Tab.Navigator>
  )
 }
