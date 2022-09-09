@@ -73,13 +73,15 @@ const renderItem = ({ item }) => (
          <View style={{flex:1}}>
             <TouchableOpacity style={styles.flexRow} onPress={()=> goToSingleTweet()}>
                 <Text numberOfLines={1} style={styles.tweetName}>{item.title}</Text>
-                <Text numberOfLines={1} style={styles.tweetHandle}>@karmjeet</Text>
+                <Text numberOfLines={1} style={styles.tweetHandle}>@handle</Text>
                 <Text>&middot;</Text>
                 <Text numberOfLines={1} style={styles.tweetHandle}>8am</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.tweetContentContainer} onPress={()=> goToSingleTweet()}>
                 <Text style={styles.tweetContent}>
-                    Treat people with love and respect. Treat them as you would be treated. It's a hard world out there, don't make it harder
+                    Treat people with love and respect. Treat them as you would be treated. It's a hard world out there, don't make it harder.
+                    Stay safe. Love one another. Life is hard for everyone, so spread peace and happiness. #tweetlove
+
                 </Text>
             </TouchableOpacity>
             <View style={styles.tweetEngagment}>
@@ -151,8 +153,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     avatar: {
-        width: 43,
-        height: 43,
+        width: 42,
+        height: 42,
         borderRadius: 21,
         marginRight: 8,
     },
