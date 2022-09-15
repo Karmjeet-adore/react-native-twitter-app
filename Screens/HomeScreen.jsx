@@ -137,6 +137,13 @@ const renderItem = ({ item }) => (
 }
 
 const styles = StyleSheet.create({
+   textGray: {
+        color: 'gray',
+    },
+    ml4: {
+        marginLeft: 16,
+
+    },
     container: {
         flex: 1,
         backgroundColor: 'white',
@@ -176,13 +183,7 @@ const styles = StyleSheet.create({
     tweetContent: {
         lineHeight:20,
     },
-    textGray: {
-        color: 'gray',
-    },
-    ml4: {
-        marginLeft: 16,
-
-    },
+   
     tweetEngagment: {
         flexDirection: 'row',
         marginTop: 12,
